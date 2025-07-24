@@ -1,0 +1,19 @@
+# dependencies
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# dotenv files
+*.env
+
+# build output
+client/build
+dist
+
+# logs
+logs
+*.log
+
+# OS generated
+.DS_Store
+Thumbs.db
