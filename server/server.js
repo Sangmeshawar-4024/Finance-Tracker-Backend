@@ -9,7 +9,7 @@ dotenv.config();
 
 const app = express();
 app.use(cors({
-  origin: 'https://finance-tracker-frontend-lac.vercel.app/', 
+  origin: 'https://finance-tracker-frontend-lac.vercel.app', 
   credentials: true,
 }))
 app.use(express.json());
