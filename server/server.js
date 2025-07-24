@@ -3,10 +3,15 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
 
+
+
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'https://finance-tracker-frontend-lac.vercel.app/', 
+  credentials: true,
+}))
 app.use(express.json());
 
 const authRoutes = require('./routes/authRoutes');
