@@ -7,9 +7,9 @@ dotenv.config();
 
 const app = express();
 
-// CORS: Allow frontend origin & enable credentials for cookies (if needed)
+
 app.use(cors({
-  origin: 'https://finance-tracker-frontend-git-main-sangmeshawar-nilas-projects.vercel.app/',
+  origin: 'https://finance-tracker-frontend-git-main-sangmeshawar-nilas-projects.vercel.app',
   credentials: true,
 }));
 
