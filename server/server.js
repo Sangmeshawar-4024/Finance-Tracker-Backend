@@ -9,21 +9,18 @@ const app = express();
 
 
 app.use(cors({
-  origin: 'https://finance-tracker-frontend-sangmeshawar-nilas-projects.vercel.app/',
+  origin: 'https://finance-tracker-frontend-sangmeshawar-nilas-projects.vercel.app',
   credentials: true,
 }));
 
 app.use(express.json());
 
-// Import Routes
 const authRoutes = require('./routes/authRoutes');
 const transactionRoutes = require('./routes/transactionRoutes');
 
-// Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/transactions', transactionRoutes);
 
-// Start MongoDB and server
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
