@@ -9,10 +9,7 @@ const app = express();
 
 // Configure CORS with multiple allowed origins
 const allowedOrigins = [
-  'https://finance-tracker-frontend-lac.vercel.app/',
-  'https://finance-tracker-frontend-git-main-sangmeshawar-nilas-projects.vercel.app/',
-  'https://finance-tracker-frontend-9l5uijymo-sangmeshawar-nilas-projects.vercel.app/',
-  'http://localhost:3000' // For local development
+  'https://finance-tracker-frontend-lac.vercel.app',
 ];
 
 app.use(cors({
