@@ -7,30 +7,11 @@ dotenv.config();
 
 const app = express();
 
-// Configure CORS with multiple allowed origins
-const allowedOrigins = [
-  'https://finance-tracker-frontend-lac.vercel.app',
-];
 
 app.use(cors({
-  origin: function (origin, callback) {
-    // Allow requests with no origin (like mobile apps or curl requests)
-    if (!origin) return callback(null, true);
-    
-    if (allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      console.warn(`Blocked CORS request from: ${origin}`);
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
+  origin: 'https://finance-tracker-frontend-lac.vercel.app/',
   credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
 }));
-
-// Handle preflight requests
-app.options('*', cors());
 
 app.use(express.json());
 
@@ -55,9 +36,3 @@ mongoose.connect(process.env.MONGO_URI, {
 .catch(err => {
   console.error('❌ MongoDB connection error:', err.message);
 });
-
-// Simple route to test CORS
-app.get('/api/test-cors', (req, res) => {
-  res.json({ message: 'CORS is working!' });
-});
-

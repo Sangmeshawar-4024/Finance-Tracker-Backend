@@ -2,7 +2,7 @@
   "name": "finance-tracker",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "devDependencies": {
     "concurrently": "^9.2.0",
     "nodemon": "^3.1.10"
