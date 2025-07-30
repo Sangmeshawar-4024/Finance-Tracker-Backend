@@ -8,12 +8,13 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: 'https://finance-tracker-frontend-lac.vercel.app/',
+  origin: 'https://finance-tracker-frontend-lac.vercel.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
 
 app.use(express.json());
+app.use(express.urlencoded())
 
 const authRoutes = require('./routes/authRoutes');
 const transactionRoutes = require('./routes/transactionRoutes');
